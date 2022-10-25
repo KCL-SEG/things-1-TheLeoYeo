@@ -61,6 +61,10 @@ class ThingModelTestCase(TestCase):
     def test_120_character_description(self):
         self.thing.description="a"*120
         self._assert_thing_valid()
+        
+    def test_0_character_description(self):
+        self.thing.description=""
+        self._assert_thing_valid()
             
             
     def test_bad_121_character_description(self):
@@ -83,7 +87,6 @@ class ThingModelTestCase(TestCase):
         thing2 = Thing(name="abc", description="James", quantity=100)
         
         self._assert_valid(thing1)
-       
         self._assert_valid(thing2)
         
         

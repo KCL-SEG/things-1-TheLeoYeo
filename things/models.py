@@ -8,7 +8,7 @@ class Thing(models.Model):
             raise ValidationError("value is not in the interval [0, 100]")
         
     name = models.CharField(max_length=30, unique=True) 
-    description = models.CharField(max_length=120)
+    description = models.CharField(blank=True, max_length=120)
     quantity = models.PositiveIntegerField(validators=[quantity_validator])
     
     
