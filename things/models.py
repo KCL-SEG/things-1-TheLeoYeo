@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import ValidationError
 
 
+
 class Thing(models.Model):
     def quantity_validator(value):
         if value > 100 or value < 0:
